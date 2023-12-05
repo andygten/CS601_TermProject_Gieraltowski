@@ -1,0 +1,290 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #0f0f30;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+.header-links {
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #0f0f30;
+}
+
+.header-links:hover {
+    border: 1px solid #ffffff;
+}
+
+.profile-image {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+}
+
+.profile-image :hover {
+    content: url(./assets/profile_mus.jpg);
+}
+
+.iframe-video {
+    width: 100%;
+    height: 25vh;
+}
+
+.link-grid-entry {
+    text-decoration: none;
+    color: black;
+}
+
+.link-grid-entry:hover {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+}
+
+.inputs {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-label {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .hobbies {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .resume {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .biography {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+    .image-grid img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .link-grid {
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px
+    }
+
+    .doc-grid {
+        text-align: center;
+        display: grid;
+        margin: 5px;
+    }
+
+    .resume-doc-container {
+        width: 100%;
+        height: 100vh;
+        border: 0;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1580px) {
+    .hobbies {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .resume {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .biography {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .image-grid img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .link-grid {
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px
+    }
+
+    .doc-grid {
+        text-align: center;
+        display: grid;
+        margin: 5px;
+    }
+
+    .resume-doc-container {
+        width: 100%;
+        height: 100vh;
+        border: 0;
+    }
+}
+
+@media only screen and (min-width: 1581px) {
+    .hobbies {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .resume {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .biography {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .image-grid img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .link-grid {
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 100px
+    }
+
+    .doc-grid {
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        margin: 5px;
+    }
+
+    .resume-doc-container {
+        width: 100%;
+        height: 100vh;
+        grid-column: 2;
+        border: 0;
+    }
+}

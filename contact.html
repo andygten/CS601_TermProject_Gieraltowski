@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js">
+	</script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js">
+	</script>
+    <script src="./firestore.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Andrew Gieraltowski</h1>
+        <h2>Portfolio</h2>
+        <nav>
+            <a href="./index.html" class="header-links">Home</a>
+            <a href="./hobbies.html" class="header-links">Hobbies</a>
+            <a href="./resume.html" class="header-links">Resume</a>
+            <a href="./instagram.html" class="header-links">Instagram</a>
+            <a href="./contact.html" class="header-links">Contact</a>
+        </nav>
+    </header>
+    <div class="contact">
+        <form id="contactForm" onsubmit="validateEmail(event)">
+            <h2>Contact Me</h2>
+            <label for="name">Name:</label>
+            <input class="input-label"type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input class="input-label" type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea class="input-label" id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="contact">
+        <form id="requestContactData" onsubmit="validateEmail(event)">
+        <h2>Messages Sent</h2>
+            <label for="email">Email:</label>
+            <input class="input-label" type="email" id="requestEmail" name="requestEmail" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="contact">
+        <ul id="messageList"></ul>
+    </div>
+
+
+    <script>
+        // Initialize Firebase
+        var config = { 
+                apiKey: "AIzaSyBDHTWxw8Z1ds88UjCHvzgZGXIzkcPbRkU",
+                authDomain: "cs601-andrewgieraltowski.firebaseapp.com",
+                projectId: "cs601-andrewgieraltowski",
+                storageBucket: "cs601-andrewgieraltowski.appspot.com",
+                messagingSenderId: "684077649443",
+                appId: "1:684077649443:web:40abfecec51922cc7b2b96",
+                measurementId: "G-9WY9H18HQX"
+            };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true }); 
+    </script>
+
+</body>
+</html>
