@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Hobbies Page</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="darkmode.css">
+    <script src="./darkmode.js"></script>
 </head>
 <body>
     <header>
@@ -15,10 +17,16 @@
                 <a href="./resume.html" class="header-links">Resume</a>
                 <a href="./instagram.html" class="header-links">Instagram</a>
                 <a href="./contact.html" class="header-links">Contact</a>
+                <div class="toggle-container">
+                    <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                    </label>
+                </div>
             </nav>
     </header>
     <!-- List of Hobbies -->
-    <div class="hobbies">
+    <div class="hobbies" id="main">
         <h2>Hobbies</h2>
             Some of my hobbies include:
             <ul>
@@ -43,18 +51,20 @@
             <h2>
                 Hobby Gallery 
             </h2>
-        <div class="image-grid">
-            <tr>
-                <td class="center-image"><img src="./assets/post_half.jpg" alt="Post Half Marathon"></td>
-                <td class="center-image"><img src="./assets/limitless.jpg" alt="Limitless Movie"></td>
-                <td class="center-image"><img src="./assets/osrs.jpg" alt="Old School Runescape"></td>
-            </tr>
-            <tr>
-                <td class="center-image"><img src="./assets/dark_knight.jpg" alt="The Dark Knight Movie"></td>
-                <td class="center-image"><img src="./assets/mobile_app.png" alt="Rebound Out Mobile App"></td>
-                <td class="center-image"><img src="./assets/trek_bike.jpg" alt="Trexk FX4 Bike"></td>
-            </tr>
-        </div>
+            <div class="row">
+                <div class="column">
+                    <img src="./assets/post_half.jpg" alt="Post Half Marathon">
+                    <img src="./assets/limitless.jpg" alt="Limitless Movie">
+                    <img src="./assets/osrs.jpg" alt="Old School Runescape">
+                </div>
+                <div class="column">
+                    <img src="./assets/dark_knight.jpg" alt="The Dark Knight Movie">
+                </div>
+                <div class="column">
+                    <img src="./assets/mobile_app.png" alt="Rebound Out Mobile App">
+                    <img src="./assets/trek_bike.jpg" alt="Trexk FX4 Bike">
+                </div>
+            </div>
         
         <h2>
             Hobby Videos

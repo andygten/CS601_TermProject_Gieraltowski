@@ -7,9 +7,79 @@
 
 let messageList = null
 let currentUser = ""
+let darkMode = false;
+
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleSwitch = document.getElementById('darkModeToggle');
+    const darkMode = getCookie('darkMode');
+    const main = document.getElementById('app');
+    const requests = document.getElementById('requests');
+    const responses = document.getElementById('responses');
+    console.log("darkMode: " + darkMode);
+    if (darkMode === "on") {
+        document.body.classList.add('dark-mode');
+        main.classList.add('dark');
+        requests.classList.add('dark');
+        responses.classList.add('dark');
+        toggleSwitch.checked = true;
+    }
+})
 
 window.onload = function() {
     messageList = document.querySelector("#messageList");
+    new Vue({
+        el: '#app',
+        data: {
+            formData: {
+            name: '',
+            email: '',
+            message: ''
+            }
+        },
+        methods: {
+            submitForm() {
+                db.collection("contactData").add({
+                    name: this.formData.name,
+                    email: this.formData.email,
+                    message: this.formData.message
+                });
+                this.resetForm();
+            },
+            resetForm() {
+                this.formData.name = '';
+                this.formData.email = '';
+                this.formData.message = '';
+            }
+        }
+    });
+
+    new Vue({
+        el: '#requests',
+        data: {
+            formData: {
+            email: '',
+            }
+        },
+        methods: {
+            submitForm() {
+                messageList.innerHTML='';
+                db.collection("contactData").where("email", "==", this.formData.email)
+                .get()
+                .then((snapshot) => {
+                    snapshot.forEach(doc => {
+                        console.log(doc.data());
+                        buildMessageList(doc);
+                    })
+                });
+                this.resetForm();
+            },
+            resetForm() {
+                this.formData.email = '';
+            }
+        }
+    });
+
+    /*
     document.getElementById("contactForm").addEventListener('submit', e=> {
     e.preventDefault();
     const form = {
@@ -28,8 +98,10 @@ window.onload = function() {
     form.email.value= "";
     form.message.value = "";
     });
+    */
 
 
+    /*
     document.getElementById("requestContactData").addEventListener('submit', event=> {
         messageList.innerHTML = '';
         const email = document.getElementById("requestEmail").value;
@@ -44,6 +116,30 @@ window.onload = function() {
             })
         });
     });
+    */
+
+    const toggleSwitch = document.getElementById('darkModeToggle');
+    const main = document.getElementById('app');
+    const requests = document.getElementById('requests');
+    const responses = document.getElementById('responses');
+
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.body.classList.add('dark-mode');
+            main.classList.add('dark');
+            requests.classList.add('dark');
+            responses.classList.add('dark');
+            setCookie("darkMode", "on", 365);
+        } else {
+            document.body.classList.remove('dark-mode');
+            main.classList.remove('dark');
+            requests.classList.remove('dark');
+            responses.classList.remove('dark');
+            setCookie("darkMode", "off", 365);
+        }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme);
 }
 
 function buildMessageList(doc) {
@@ -89,4 +185,21 @@ function buildMessageList(doc) {
 function validateEmail(email) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
+}
+
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = name + '=' + value + ';expires=' + expires.toUTCString();
+}
+
+function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.split('=');
+        if (cookieName.trim() === name) {
+        return cookieValue;
+        }
+    }
+    return null;
 }

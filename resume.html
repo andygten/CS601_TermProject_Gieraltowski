@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Resume Page</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="darkmode.css">
+    <script src="./resume.js"></script>
 </head>
 <body>
     <header>
@@ -15,9 +17,15 @@
             <a href="./resume.html" class="header-links">Resume</a>
             <a href="./instagram.html" class="header-links">Instagram</a>
             <a href="./contact.html" class="header-links">Contact</a>
+            <div class="toggle-container">
+                <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+                </label>
+            </div>
         </nav>
     </header>
-    <div class="resume">
+    <div class="resume" id="main">
         <h2>Resume</h2>
         <div class="link-grid">
             <a href="https://play.google.com/store/apps/details?id=com.AndrewAndMike.ReboundOut&pcampaignid=web_share" class="link-grid-entry">Google Play Link</a>

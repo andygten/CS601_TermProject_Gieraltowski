@@ -1,0 +1,76 @@
+.switch {
+    font-size: 17px;;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4ffff;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #303222;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background: #303222;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -5px 0 0 #a3dafb;
+}
+
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-link {
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode {
+  background-color: #0e0d0d;
+}
+
+.dark-mode .toggle-container {
+  color: #fff;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
