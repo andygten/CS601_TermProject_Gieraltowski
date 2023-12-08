@@ -79,45 +79,6 @@ window.onload = function() {
         }
     });
 
-    /*
-    document.getElementById("contactForm").addEventListener('submit', e=> {
-    e.preventDefault();
-    const form = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-    };
-    
-    console.log(form);
-    db.collection("contactData").add({
-        name: form.name,
-        email: form.email,
-        message: form.message
-    });
-    form.name.value = "";
-    form.email.value= "";
-    form.message.value = "";
-    });
-    */
-
-
-    /*
-    document.getElementById("requestContactData").addEventListener('submit', event=> {
-        messageList.innerHTML = '';
-        const email = document.getElementById("requestEmail").value;
-        currentUser = email
-        event.preventDefault();
-        db.collection("contactData").where("email", "==", email)
-        .get()
-        .then((snapshot) => {
-            snapshot.forEach(doc => {
-                console.log(doc.data());
-                buildMessageList(doc);
-            })
-        });
-    });
-    */
-
     const toggleSwitch = document.getElementById('darkModeToggle');
     const main = document.getElementById('app');
     const requests = document.getElementById('requests');
@@ -180,11 +141,6 @@ function buildMessageList(doc) {
             });
         })
     });
-}
-
-function validateEmail(email) {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
 }
 
 function setCookie(name, value, days) {
